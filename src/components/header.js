@@ -21,14 +21,14 @@ const Header = () => {
     query {
   flagaEN: file(relativePath: {eq: "en.png"}) {
     childImageSharp {
-      fixed {
+      fixed(width: 24) {
         ...GatsbyImageSharpFixed
       }
     }
   }
   flagaPL: file(relativePath: {eq: "pl.png"}) {
     childImageSharp {
-      fixed {
+      fixed(width: 24) {
         ...GatsbyImageSharpFixed
       }
     }
