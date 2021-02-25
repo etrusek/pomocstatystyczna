@@ -4,9 +4,7 @@ import { Link, graphql, useStaticQuery } from 'gatsby'
 import styled from "@emotion/styled"
 import Img from "gatsby-image"
 
-const CssImg1 = styled.img`
-width: 100%;
-`
+
 const CssUl1 = styled.ul`
 padding-left: 20px;
 `
@@ -14,12 +12,18 @@ padding-left: 20px;
 const OfertaIndywidualna = () => {
 
   const data = useStaticQuery(graphql`
-  query {
-  oferta: file(relativePath: {eq: "indyvidual.jpg"}) {
-    childImageSharp {
-      fluid(maxWidth: 1280) {
-        ...GatsbyImageSharpFluid
-  }}}}`)
+query {
+oferta: file(relativePath: {eq: "indyvidual.jpg"}) {
+childImageSharp {
+fluid(maxWidth: 1280) {
+...GatsbyImageSharpFluid_tracedSVG
+}}}
+przyklad: file(relativePath: {eq: "przyklad.jpg"}) {
+childImageSharp {
+fixed(width: 420) {
+...GatsbyImageSharpFixed_tracedSVG
+}}}
+}`)
 
   return (
     <Layout>
@@ -27,11 +31,11 @@ const OfertaIndywidualna = () => {
         <Img fluid={data.oferta.childImageSharp.fluid} alt="oferta indywidualna" />
       </ div >
 
-      <div id="offer" class="bg">
+      <div id="offer" className="bg">
         <div>
-          <h3 class="title">Oferta</h3>
+          <h3 className="title">Oferta</h3>
           <p>Badania do pracy dyplomowej czy pracy naukowej realizują Państwo z wielkim nakładem swojego czasu, sił a niekiedy również środków finansowych. Ukoronowaniem ich jest analiza statystyczna zebranych danych. Nasze profesjonalne podejście sprawi, że Państwa wysiłek nie pójdzie na marne. <br /><br />
-        Oferujemy opracowanie <strong>analiz statystycznych</strong> w pełnej, przystępnej dla każdego formie, wprowadzanie danych,  pomoc w projektowaniu badań i opisie metodologii badania. Korzystając z naszych usług otrzymują Państwo nie tylko gotową analizę, ale również pomoc merytoryczną, wytłumaczenie wykonanej pracy, pomoc w kontakcie z promotorem, recenzentem, czasopismem naukowym. Jeżeli trzeba, podpowiadamy co zmienić i co poprawić zanim zlecą nam Państwo pracę. Pytania po wykonanej analizie mogą Państwo bezpłatnie zadawać nawet po kilku miesiącach po jej realizacji.<br /><br />Przy <strong>analizie statystycznej</strong> korzystamy z takich technik i metod analiz jak:</p>
+Oferujemy opracowanie <strong>analiz statystycznych</strong> w pełnej, przystępnej dla każdego formie, wprowadzanie danych,pomoc w projektowaniu badań i opisie metodologii badania. Korzystając z naszych usług otrzymują Państwo nie tylko gotową analizę, ale również pomoc merytoryczną, wytłumaczenie wykonanej pracy, pomoc w kontakcie z promotorem, recenzentem, czasopismem naukowym. Jeżeli trzeba, podpowiadamy co zmienić i co poprawić zanim zlecą nam Państwo pracę. Pytania po wykonanej analizie mogą Państwo bezpłatnie zadawać nawet po kilku miesiącach po jej realizacji.<br /><br />Przy <strong>analizie statystycznej</strong> korzystamy z takich technik i metod analiz jak:</p>
           <ul>
             <li>sprawdzenie poprawności postawionych hipotez/pytań badawczych</li>
             <li>statystyki opisowe: rozkłady częstości, sprawdzanie normalności rozkładów zmiennych, średnie, mediany, wariancje, odchylenia standardowe i inne</li>
@@ -51,10 +55,9 @@ const OfertaIndywidualna = () => {
 Oferujemy również <strong>kontrolę statystyczną</strong>, czyli pomoc osobom, które zleciły prace komuś innemu i nie są zadowolone z wyników, które otrzymały. Poprawiamy prace innych, sprawdzamy, czy słusznie wydali Państwo swoje pieniądze. Sprawdzamy również poprawność wykonywanych przez Państwa analiz. <br /><br />
 Oferujemy pomoc w <strong>zaplanowaniu badan ilościowych</strong>, opisie metody badawczej oraz w zaprojektowaniu i zaprogramowaniu badania. Posiadamy bogate doświadczenie w <em>tworzeniu</em> rzetelnych, poprawnych metodologicznie <strong>ankiet i kwestionariuszy</strong>.
 
-        </p>
-          <h3 class="title">Część przykładowego opracowania</h3>
-          <CssImg1 src="images/przyklad.jpg" alt="przykład" />
-
+</p>
+          <h3 className="title">Część przykładowego opracowania</h3>
+          <Img fixed={data.przyklad.childImageSharp.fixed} alt="przykład" />
         </div>
         <div>
           <p>Przeprowadzamy analizy statystyczne na poziomie:<br /></p>
@@ -66,63 +69,61 @@ Oferujemy pomoc w <strong>zaplanowaniu badan ilościowych</strong>, opisie metod
             <li>publikacji naukowych (polskich i zagranicznych czasopism)</li>
           </CssUl1>
 
-          <p><br />Podane poniżej ceny dotyczą standardowych analiz. Jednak cena może być mniejsza bądź większa i uzależniona jest od obszerności pracy i ilości przeprowadzonych analiz.  Cena (mniejsza bądź większa) jest przedstawiana przez nas mailowo bądź telefonicznie jeszcze przed podjęciem pracy, ale już po zapoznaniu się z poszczególnymi przypadkami. Aby rozwiać swoje wątpliwości <Link to="/kontakt" title="kontakt">zobacz przebieg kontraktu</Link></p>
+          <p><br />Podane poniżej ceny dotyczą standardowych analiz. Jednak cena może być mniejsza bądź większa i uzależniona jest od obszerności pracy i ilości przeprowadzonych analiz.Cena (mniejsza bądź większa) jest przedstawiana przez nas mailowo bądź telefonicznie jeszcze przed podjęciem pracy, ale już po zapoznaniu się z poszczególnymi przypadkami. Aby rozwiać swoje wątpliwości <Link to="/kontakt" title="kontakt">zobacz przebieg kontraktu</Link></p>
           <table>
-            <tr class="title"><td>Rodzaj usługi</td><td>Opis usługi</td><td>Cena</td></tr>
+            <tr className="title"><td>Rodzaj usługi</td><td>Opis usługi</td><td>Cena</td></tr>
             <tr>
-              <td rowspan="3" class="title" itemprop="name">Analizy<br />statystyczne</td>
-              <td itemprop="description">Analiza statystyczna (wykonanie analiz oraz sporządzenie całego rozdziału, raportu, w zrozumiałym języku dla czytelników, z tabelami, wykresami - kompletny charakter, gotowe do przedstawienia)
-            </td>
-              <td itemprop="offerDetails" ><meta itemprop="currency" content="PLN" /> <span itemprop="price">250</span>zł</td>
+              <td rowSpan="3" className="title" >Analizy<br />statystyczne</td>
+              <td >Analiza statystyczna (wykonanie analiz oraz sporządzenie całego rozdziału, raportu, w zrozumiałym języku dla czytelników, z tabelami, wykresami - kompletny charakter, gotowe do przedstawienia)
+</td>
+              <td><meta itemProp="currency" content="PLN" /> <span itemProp="price">250</span>zł</td>
             </tr>
             <tr >
-              <td itemprop="description">Wykonanie samej analizy statystycznej (w formie raportu SPSS, Statistica, MS Excel, Ms Word lub innych)</td>
-              <td itemprop="offerDetails" ><meta itemprop="currency" content="PLN" /> <span itemprop="price">120</span>zł</td>
+              <td >Wykonanie samej analizy statystycznej (w formie raportu SPSS, Statistica, MS Excel, Ms Word lub innych)</td>
+              <td><meta itemProp="currency" content="PLN" /> <span itemProp="price">120</span>zł</td>
             </tr>
             <tr >
-              <td itemprop="description">Wykonanie samego opracowania z analizy statystycznej na podstawie dostarczonych wyników statystycznych</td>
-              <td itemprop="offerDetails" >200zł</td>
+              <td >Wykonanie samego opracowania z analizy statystycznej na podstawie dostarczonych wyników statystycznych</td>
+              <td>200zł</td>
             </tr>
             <tr >
-              <td itemprop="name" class="title">Modele statystyczne</td>
-              <td itemprop="description">Stworzenie modelu statystycznego, ekonometrycznego</td>
-              <td itemprop="offerDetails" itemscope itemtype="http://data-vocabulary.org/Offer">do uzgodnienia</td>
+              <td className="title">Modele statystyczne</td>
+              <td >Stworzenie modelu statystycznego, ekonometrycznego</td>
+              <td >do uzgodnienia</td>
             </tr>
             <tr >
-              <td itemprop="name" rowspan="3" class="title">Projektowanie<br />badań</td>
-              <td itemprop="description">Przygotowanie planu badawczego wraz z hipotezami</td>
-              <td itemprop="offerDetails" itemscope itemtype="http://data-vocabulary.org/Offer"><meta itemprop="currency" content="PLN" /> <span itemprop="price">170</span>zł</td>
+              <td rowSpan="3" className="title">Projektowanie<br />badań</td>
+              <td >Przygotowanie planu badawczego wraz z hipotezami</td>
+              <td ><meta itemProp="currency" content="PLN" /> <span itemProp="price">170</span>zł</td>
             </tr>
 
             <tr >
-              <td itemprop="description">Przygotowanie kwestionariusza, ankiety</td>
-              <td itemprop="offerDetails" itemscope itemtype="http://data-vocabulary.org/Offer">do uzgodnienia</td>
+              <td >Przygotowanie kwestionariusza, ankiety</td>
+              <td >do uzgodnienia</td>
             </tr>
             <tr >
-              <td itemprop="description">Opisanie gotowej części pracy: metoda badawcza</td>
-              <td itemprop="offerDetails" itemscope itemtype="http://data-vocabulary.org/Offer"><meta itemprop="currency" content="PLN" /> <span itemprop="price">200</span>zł</td>
+              <td >Opisanie gotowej części pracy: metoda badawcza</td>
+              <td ><meta itemProp="currency" content="PLN" /> <span itemProp="price">200</span>zł</td>
             </tr>
             <tr >
-              <td itemprop="name" rowspan="2" class="title">Kontrola<br />statystyczna</td>
-              <td itemprop="description">Sprawdzenie poprawności wykonanych analiz statystycznych (standardowe analizy)</td>
-              <td itemprop="offerDetails" itemscope itemtype="http://data-vocabulary.org/Offer">do uzgodnienia</td>
+              <td rowSpan="2" className="title">Kontrola<br />statystyczna</td>
+              <td >Sprawdzenie poprawności wykonanych analiz statystycznych (standardowe analizy)</td>
+              <td >do uzgodnienia</td>
             </tr>
             <tr >
-              <td itemprop="description">Poprawa przeprowadzonych analiz statystycznych</td>
-              <td itemprop="offerDetails" itemscope itemtype="http://data-vocabulary.org/Offer">do uzgodnienia</td>
+              <td >Poprawa przeprowadzonych analiz statystycznych</td>
+              <td >do uzgodnienia</td>
             </tr>
             <tr >
-              <td itemprop="name" rowspan="2" class="title">Język<br />opracowania</td>
-              <td itemprop="description">Opracowanie w języku angielskim</td>
-              <td itemprop="offerDetails" itemscope itemtype="http://data-vocabulary.org/Offer">+70%</td>
+              <td rowSpan="2" className="title">Język<br />opracowania</td>
+              <td >Opracowanie w języku angielskim</td>
+              <td >+70%</td>
             </tr>
             <tr >
-              <td itemprop="description">Tłumaczenie gotowej pracy / projektu na język angielski</td>
-              <td itemprop="offerDetails" itemscope itemtype="http://data-vocabulary.org/Offer">do uzgodnienia</td>
+              <td >Tłumaczenie gotowej pracy / projektu na język angielski</td>
+              <td >do uzgodnienia</td>
             </tr>
           </table>
-
-
         </div>
       </div>
     </Layout>

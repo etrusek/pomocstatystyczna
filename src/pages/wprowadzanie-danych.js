@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from '../components/Layout'
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from "gatsby-image"
+import ContactData from '../components/contactData'
 
 const WprowadzanieDanych = () => {
 
@@ -10,7 +11,7 @@ const WprowadzanieDanych = () => {
   file(relativePath: {eq: "date.jpg"}) {
     childImageSharp {
       fluid(maxWidth: 1280) {
-        ...GatsbyImageSharpFluid
+        ...GatsbyImageSharpFluid_tracedSVG
       }}}
   }
 `)
@@ -22,8 +23,8 @@ const WprowadzanieDanych = () => {
 
       </div>
 
-      <div id="contact" class="wrapper" itemscope itemtype="http://data-vocabulary.org/Organization">
-
+      <div id="contact" class="wrapper" >
+        <ContactData />
         <div>
           <h3 class="title border">Wprowadzanie danych</h3>
           <p>

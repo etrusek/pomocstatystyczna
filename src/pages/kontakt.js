@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from '../components/Layout'
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from "gatsby-image"
+import ContactData from '../components/contactData'
 
 const Kontakt = () => {
 
@@ -10,7 +11,7 @@ const Kontakt = () => {
   file(relativePath: {eq: "map.jpg"}) {
     childImageSharp {
       fluid(maxWidth: 1280) {
-        ...GatsbyImageSharpFluid
+        ...GatsbyImageSharpFluid_tracedSVG
       }}}
   }
 `)
@@ -22,7 +23,7 @@ const Kontakt = () => {
       </div>
 
       <div id="contact" className="wrapper">
-
+        <ContactData />
         <div>
           <p>
             Otrzymają Państwo to, czego oczekują. Zapewniamy Państwu pełną kontrolę na tym co przygotujemy dla Państwa. Wspólnie z klientem ustalamy szczegółowy plan pracy i termin realizacji. Po wykonaniu zlecenia wyjaśniamy wszelkie wątpliwości związane z pracą nawet po kliku miesiącach od jego wykonania.<br /><br />

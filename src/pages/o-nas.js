@@ -3,11 +3,17 @@ import Layout from '../components/Layout'
 import styled from "@emotion/styled"
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from "gatsby-image"
+import { css } from "@emotion/react"
+import Opinion from '../components/opinion'
 //styles
 
 const CssSpan1 = styled.span`
   float: left;
   clear: both;
+`
+
+const styleWidth = css`
+height: auto;
 `
 
 //page
@@ -18,12 +24,12 @@ const IndexPage = () => {
   oferta: file(relativePath: {eq: "about.jpg"}) {
     childImageSharp {
       fluid(maxWidth: 1280) {
-        ...GatsbyImageSharpFluid
+        ...GatsbyImageSharpFluid_tracedSVG
       }}}
- about: file(relativePath: {eq: "allegro/about_us.jpg"}) {
+ about: file(relativePath: {eq: "AboutUs.jpg"}) {
     childImageSharp {
-      fixed(width: 225) {
-        ...GatsbyImageSharpFixed
+      fixed(width: 274) {
+        ...GatsbyImageSharpFixed_tracedSVG
       }}}
   }
 `)
@@ -31,10 +37,10 @@ const IndexPage = () => {
   return (
     <Layout>
       <div id="slides">
-        <Img fluid={data.oferta.childImageSharp.fluid} alt="oferta biznesowa" />
+        <Img css={styleWidth} fluid={data.oferta.childImageSharp.fluid} alt="oferta biznesowa" />
       </div>
 
-      <div class="bg about">
+      <div className="bg about">
         <p>
           <Img fixed={data.about.childImageSharp.fixed} alt="historia pomocystatystycznej" />
           <br /><br />W skład naszego zespołu wchodzą specjaliści z zakresu <strong>statystyki</strong>, <strong>metodologii badań</strong>, <strong>matematyki</strong>, <strong>fizyki</strong>, <strong>informatyki</strong> oraz <strong>nauk społecznych</strong>, takich jak: <strong>ekonomia</strong>, <strong>socjologia</strong>, <strong>psychologia</strong>.<br />Już od ponad 7 lat wykonujemy analizy statystyczne dla studentów, pracowników naukowych polskich i zagranicznych uczelni oraz na zlecenie instytucji i firm. Posiadamy bogate doświadczenie w projektowaniu badań ilościowych, analizie danych i prezentacji uzyskanych rezultatów.<br />W naszych analizach wykorzystujemy zarówno tradycyjne techniki analityczne jak również nowe, zaawansowane metody analiz statystycznych. <CssSpan1>Zrealizowaliśmy projekty oraz wykonaliśmy analizy do prac dyplomowych i naukowych z rożnych dziedzin, m in.:</CssSpan1>
@@ -54,6 +60,7 @@ Pozdrawiamy<br />
 Zespół: PomocStatystyczna.pl
 </p>
       </div>
+      <Opinion />
     </Layout >
   )
 }

@@ -12,7 +12,6 @@ const Footer = () => {
         <li><Link to="/badania-onLine" title="Ankiety" >Badanie on-line</Link></li>
         <li><Link to="/wprowadzanie-danych" title="wprowadzanie danych" >wprowadzanie danych</Link></li>
         <li><Link to="/kontakt" title="napisz do pomocstatystyczna" >kontakt</Link></li>
-        <li><Link to="http://www.naukowiec.org/" title="portal pełen wiedzy">naukowiec.org</Link></li>
       </ul>
 
       <p>&copy; Copyright 2010 - 2021 by <Link to="/" title="właśiciel strony">pomocstatystyczna.pl</Link><br />All rights reserved !</p>

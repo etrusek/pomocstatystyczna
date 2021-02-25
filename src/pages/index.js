@@ -1,5 +1,6 @@
 import React from 'react';
 import Layout from '../components/Layout'
+import Opinion from '../components/opinion'
 //styles
 
 
@@ -8,7 +9,7 @@ import Layout from '../components/Layout'
 const IndexPage = () => {
   return (
     <Layout>
-
+      <Opinion />
     </Layout>
   )
 }

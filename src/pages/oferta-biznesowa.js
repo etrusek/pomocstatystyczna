@@ -3,6 +3,7 @@ import Layout from '../components/Layout'
 import styled from "@emotion/styled"
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from "gatsby-image"
+import ContactData from '../components/contactData'
 
 const CssUl1 = styled.ul`
 padding-left:20px;
@@ -20,7 +21,7 @@ const OfertaBiznesowa = () => {
   file(relativePath: {eq: "business.jpg"}) {
     childImageSharp {
       fluid(maxWidth: 1280) {
-        ...GatsbyImageSharpFluid
+        ...GatsbyImageSharpFluid_tracedSVG
       }}}
   }
 `)
@@ -33,7 +34,7 @@ const OfertaBiznesowa = () => {
 
       <div id="offer" class="bg">
         <div class="business">
-          <p><strong>PomocStatystyczna.pl</strong> już od 7 lat działa na rynku, udzielając profesjonalnego doradztwa w zakresie przeprowadzenia badań oraz analizy zebranych wyników dla naukowców, instytucji i firm. W tym czasie zrealizowaliśmy różnego rodzaju projekty badawcze i analityczne. Doradzaliśmy podmiotom gospodarczym jak również instytucjom państwowym w zakresie przeprowadzania badań, konstrukcji narzędzi, analizy danych czy budowy wskaźników analitycznych. </p>
+          <p><strong>PomocStatystyczna.pl</strong> już od 11 lat działa na rynku, udzielając profesjonalnego doradztwa w zakresie przeprowadzenia badań oraz analizy zebranych wyników dla naukowców, instytucji i firm. W tym czasie zrealizowaliśmy różnego rodzaju projekty badawcze i analityczne. Doradzaliśmy podmiotom gospodarczym jak również instytucjom państwowym w zakresie przeprowadzania badań, konstrukcji narzędzi, analizy danych czy budowy wskaźników analitycznych. </p>
           <h3 class="title">Dlaczego my?</h3>
           <CssUl1>
             <li>ponieważ jesteśmy interdyscyplinarnym zespołem
@@ -72,7 +73,7 @@ const OfertaBiznesowa = () => {
             <li>Dobierz metodę analizy danych do celów badawczych – nie na odwrót – to zawsze lepiej wygląda</li>
             <li>Nie nadinterpretuj wyników – możesz odkryć to, co w rzeczywistości nie występuje</li>
           </CssUl1>
-
+          <ContactData />
 
         </div>
 

@@ -3,6 +3,7 @@ import Layout from '../components/Layout'
 import styled from "@emotion/styled"
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from "gatsby-image"
+import ContactData from '../components/contactData'
 
 const CssUl1 = styled.ul`
   padding-left:20px;
@@ -35,7 +36,7 @@ const BadaniaOnLine = () => {
   file(relativePath: {eq: "questionaire.jpg"}) {
     childImageSharp {
       fluid(maxWidth: 1280) {
-        ...GatsbyImageSharpFluid
+        ...GatsbyImageSharpFluid_tracedSVG
       }}}
   }
 `)
@@ -105,7 +106,7 @@ const BadaniaOnLine = () => {
 
           <h3 className="title border">Kontakt:</h3>
 
-
+          <ContactData />
         </div>
 
 
