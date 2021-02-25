@@ -16,7 +16,7 @@ const CssA1 = styled.a`
 padding: 5px 10px;
 `
 
-const Header = () => {
+const Header = (props) => {
   const data = useStaticQuery(graphql`
     query {
   flagaEN: file(relativePath: {eq: "en.png"}) {
@@ -39,7 +39,7 @@ const Header = () => {
 
   return (
     <div id="header">
-      <Link to="/" title="strona główna" className="logo">
+      <Link to="/" title="strona główna" className="logo" >
         <Cssh1 >Pomoc<span>Statystyczna</span></Cssh1>
       </Link>
 
@@ -55,13 +55,13 @@ const Header = () => {
       </ul>
 
       <ul className="menu">
-        <li className="home"><Link to="/" title="pomoc statystyczna" >strona główna</Link></li>
-        <li><Link to="/o-nas" title="informacje o firmie" >o nas</Link></li>
-        <li><Link to="/oferta-indywidualna" title="oferta indywidualna" >analizy do prac <br /> dyplomowych</Link></li>
-        <li><Link to="/oferta-biznesowa" title="oferta biznesowa" >Doradztwo<br />raportowanie</Link></li>
-        <li><Link to="/badania-onLine" title="Ankiety" >Badania <br />on-line</Link></li>
-        <li><Link to="/wprowadzanie-danych" title="wprowadzanie danych" >wprowadzanie<br /> danych</Link></li>
-        <li><Link to="/kontakt" title="napisz do nas" >kontakt</Link></li>
+        <li className="home"><Link to="/" title="pomoc statystyczna" activeClassName="active" >strona główna</Link></li>
+        <li><Link to="/o-nas" title="informacje o firmie" activeClassName="active">o nas</Link></li>
+        <li><Link to="/oferta-indywidualna" title="oferta indywidualna" activeClassName="active">analizy do prac <br /> dyplomowych</Link></li>
+        <li><Link to="/oferta-biznesowa" title="oferta biznesowa" activeClassName="active">Doradztwo<br />raportowanie</Link></li>
+        <li><Link to="/badania-onLine" title="Ankiety" activeClassName="active">Badania <br />on-line</Link></li>
+        <li><Link to="/wprowadzanie-danych" title="wprowadzanie danych" activeClassName="active">wprowadzanie<br /> danych</Link></li>
+        <li><Link to="/kontakt" title="napisz do nas" activeClassName="active">kontakt</Link></li>
       </ul>
     </div >
   );

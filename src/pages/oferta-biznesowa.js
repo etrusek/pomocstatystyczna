@@ -27,15 +27,15 @@ const OfertaBiznesowa = () => {
 `)
 
   return (
-    <Layout>
+    <Layout >
       <div id="slides">
         <Img fluid={data.file.childImageSharp.fluid} alt="oferta biznesowa" />
       </div>
 
-      <div id="offer" class="bg">
-        <div class="business">
+      <div id="offer" className="bg">
+        <div className="business">
           <p><strong>PomocStatystyczna.pl</strong> już od 11 lat działa na rynku, udzielając profesjonalnego doradztwa w zakresie przeprowadzenia badań oraz analizy zebranych wyników dla naukowców, instytucji i firm. W tym czasie zrealizowaliśmy różnego rodzaju projekty badawcze i analityczne. Doradzaliśmy podmiotom gospodarczym jak również instytucjom państwowym w zakresie przeprowadzania badań, konstrukcji narzędzi, analizy danych czy budowy wskaźników analitycznych. </p>
-          <h3 class="title">Dlaczego my?</h3>
+          <h3 className="title">Dlaczego my?</h3>
           <CssUl1>
             <li>ponieważ jesteśmy interdyscyplinarnym zespołem
                 <CssUl2><li>statystyka, matematyka, informatyka, ekonomia, psychologia, socjologia, marketing, inżynieria</li></CssUl2></li>
@@ -50,7 +50,7 @@ const OfertaBiznesowa = () => {
                 <CssUl2><li>Prześlij do nas zapytanie – wycena jest darmowa</li></CssUl2></li>
           </CssUl1>
 
-          <h3 class="title">W czym możemy pomóc?</h3>
+          <h3 className="title">W czym możemy pomóc?</h3>
           <CssUl1>
             <li>Doradztwo w zakresie metodologii badań</li>
             <li>Doradztwo w zakresie analizy danych i raportowania wyników </li>
@@ -64,7 +64,7 @@ const OfertaBiznesowa = () => {
             <li>Sprawdzenie poprawności wykonanych (własnych lub zleconych) projektów, analiz, zastosowanej metodologii w badaniach </li>
           </CssUl1>
 
-          <h3 class="title">Rady dla naszych klientów:</h3>
+          <h3 className="title">Rady dla naszych klientów:</h3>
           <CssUl1>
             <li>Najpierw dokładnie ustal, czego chcesz się z badania dowiedzieć – dopiero badaj – niektórych błędów w metodologii badania nie da się naprawić</li>
             <li>Zadbaj o losowość próby badawczej – im bardziej losowa tym większa wiarygodność do uzyskanych wyników</li>
@@ -77,9 +77,9 @@ const OfertaBiznesowa = () => {
 
         </div>
 
-        <div class="business blist">
-          <h3 class="title">Zrealizowaliśmy projekty i analizy dla:</h3>
-          <ul class="business">
+        <div className="business blist">
+          <h3 className="title">Zrealizowaliśmy projekty i analizy dla:</h3>
+          <ul className="business">
             <li>2RC Consulting Sp. J. </li>
             <li>Agencja PSYCHE S.C. </li>
             <li>Akademia Wychowania Fizycznego Józefa Piłsudskiego w Warszawie </li>
