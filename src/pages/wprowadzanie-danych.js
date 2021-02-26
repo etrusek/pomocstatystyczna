@@ -23,10 +23,10 @@ const WprowadzanieDanych = () => {
 
       </div>
 
-      <div id="contact" class="wrapper" >
+      <div id="contact" className="wrapper" >
         <ContactData />
         <div>
-          <h3 class="title border">Wprowadzanie danych</h3>
+          <h3 className="title border">Wprowadzanie danych</h3>
           <p>
             Wprowadzamy dane do baz danych szybko, dokładnie i w formie przygotowanej do dalszychanaliz. Nikomu nie udostępniamy powierzonych nam danych. Przeprowadzamy kategoryzację pytań otwartych, wprowadzamy dane zarówno w formie liczbowej, jak również w postaci słów jak również mowy (transkrypcja nagrań). <br /><br />
 
