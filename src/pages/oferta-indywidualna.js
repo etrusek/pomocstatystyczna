@@ -3,7 +3,7 @@ import Layout from '../components/Layout'
 import { Link, graphql, useStaticQuery } from 'gatsby'
 import styled from "@emotion/styled"
 import Img from "gatsby-image"
-
+import Opinion from '../components/opinion'
 
 const CssUl1 = styled.ul`
 padding-left: 20px;
@@ -126,6 +126,7 @@ Oferujemy pomoc w <strong>zaplanowaniu badan ilościowych</strong>, opisie metod
           </table>
         </div>
       </div>
+      <Opinion />
     </Layout>
   );
 }

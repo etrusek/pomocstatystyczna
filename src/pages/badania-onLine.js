@@ -1,35 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Layout from '../components/Layout'
 import styled from "@emotion/styled"
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from "gatsby-image"
 import ContactData from '../components/contactData'
 
+
+
 const CssUl1 = styled.ul`
-  padding-left:20px;
-  `
+  padding-left: 20px;
+
+`
+
 const CssUl2 = styled.ul`
   margin: 20px;
-  `
-const CssP1 = styled.p`
-  font-size: 0.9em;
-  line-height: 1.3em;
-  margin-top: -20px;
-  `
+`
+
+
 
 const BadaniaOnLine = () => {
-  // var bg = document.getElementById("work_bg");
-  // var button = document.getElementById("work_button");
-  // var hide_button = document.getElementById("hide_button");
-
-  // if (bg && button) {
-  //   button.onclick = function () {
-  //     bg.style.maxWidth = '900px';
-  //   }
-
-  //   hide_button.onclick = function () {
-  //     bg.style.maxWidth = '0px';
-  //   }
+  const [isOpen, setIsOpen] = useState(false)
+  const handleClick = () => {
+    setIsOpen(!isOpen);
+  }
+  const Cssdiv1 = styled.div((isOpen) ? ({ maxWidth: 0, }) : ({ maxWidth: 900, }))
 
   const data = useStaticQuery(graphql`
   query {
@@ -40,6 +34,7 @@ const BadaniaOnLine = () => {
       }}}
   }
 `)
+
 
   return (
     <Layout>
@@ -67,13 +62,6 @@ const BadaniaOnLine = () => {
           </CssUl1>
 
           <br />
-          <a href="http://ankieta.pomocstatystyczna.pl/">Proszę zobaczyć przykład naszych możliwości - Ankieta</a>
-          <h3 className="title border">Przykładowa ankieta</h3>
-
-          <a href="http://ankieta.pomocstatystyczna.pl" className="questionaire" title="zobacz ankietę">przykładowa ankieta</a>
-
-          <CssP1>Niniejsza ankieta stanowi jedynie próbkę naszych możliwości w tworzeniu różnego rodzaju badań. Prosimy nie traktować tej ankiety jako wzoru kompletnego narzędzia badawczego. Oprócz zamieszczonych w niej przykładowych pytań tworzymy również inne formaty pytań, dostosowane do konkretnego zapotrzebowania naszych klientów.<br /><br /></CssP1>
-
           <p>
             Projektujemy dla Państwa idealnie skomponowane ankiety badania opinii klientów, z wykorzystaniem zaawansowanych języków programowania. Pomagamy dobrać odpowiednią treść i formę pytania dla każdego aspektu, który chcą Państwo w badaniu zbadać.<br /><br />
         Wszystkie dane zbierane są do bazy danych. Następnie opracowujemy raport z badania wedle planu, który wspólnie z Państwem ustalimy.<br /><br />
@@ -84,7 +72,7 @@ const BadaniaOnLine = () => {
 
           <h3 className="title border">Nasze doświadczenie</h3>
 
-          <button id="work_button">Zobacz nasze doświadczenie</button>
+          <button id="work_button" onClick={handleClick}>Zobacz nasze doświadczenie</button>
 
         </div>
 
@@ -104,7 +92,7 @@ const BadaniaOnLine = () => {
             <li>przygotowanie pełnego raportu z badania</li>
           </CssUl2>
 
-          <h3 className="title border">Kontakt:</h3>
+          <h3 className="title border" >Kontakt:</h3>
 
           <ContactData />
         </div>
@@ -112,7 +100,7 @@ const BadaniaOnLine = () => {
 
       </div>
 
-      <div id="work_bg">
+      <Cssdiv1 id="work_bg">
         <ul id="work_list" className="business">
           <li>2RC Consulting Sp. J. </li>
           <li>Agencja PSYCHE S.C. </li>
@@ -156,8 +144,8 @@ const BadaniaOnLine = () => {
           <li>Wyższa Szkoła Edukacji i Terapii w Poznaniu</li>
         </ul>
 
-        <button id='hide_button'>x</button>
-      </div>
+        <button id='hide_button' onClick={handleClick}>x</button>
+      </Cssdiv1>
 
 
 
