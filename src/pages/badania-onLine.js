@@ -23,7 +23,7 @@ const BadaniaOnLine = () => {
   const handleClick = () => {
     setIsOpen(!isOpen);
   }
-  const Cssdiv1 = styled.div((isOpen) ? ({ maxWidth: 0, }) : ({ maxWidth: 900, }))
+  const Cssdiv1 = styled.div((isOpen) ? ({ maxWidth: 900, }) : ({ maxWidth: 0, }))
 
   const data = useStaticQuery(graphql`
   query {
@@ -34,7 +34,6 @@ const BadaniaOnLine = () => {
       }}}
   }
 `)
-
 
   return (
     <Layout>
