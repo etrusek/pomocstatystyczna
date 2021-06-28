@@ -68,16 +68,15 @@ const IndexPage = () => {
                 <td>16:30 - 17:30</td>
                 <td></td>
                 <td>16:30 - 17:30</td>
-                <td></td>
+                <td>Zajęte</td>
                 <td>16:30 - 17:30</td>
                 <td>Zajęte</td>
               </tr><tr>
                 <td></td>
                 <td></td>
                 <td>17:45 - 18:45</td>
-                <td></td>
+                <td>Zajęte</td>
                 <td>17:45 - 18:45</td>
-
                 <td></td>
               </tr><tr>
                 <td></td>
@@ -85,10 +84,8 @@ const IndexPage = () => {
                 <td>19:00 - 20:00</td>
                 <td></td>
                 <td>19:00 - 20:00</td>
-
                 <td></td>
               </tr>
-
             </tbody>
           </table>
         </div>
