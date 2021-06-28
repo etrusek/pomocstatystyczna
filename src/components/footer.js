@@ -14,7 +14,7 @@ const Footer = () => {
         <li><Link to="/kontakt" title="napisz do pomocstatystyczna" >kontakt</Link></li>
       </ul>
 
-      <p>&copy; Copyright 2010 - 2021 by <Link to="/" title="właśiciel strony">pomocstatystyczna.pl</Link><br />All rights reserved !</p>
+      <p>&copy; Copyright 2010 - 2021 by <Link to="/" title="właśiciel strony">pomocstatystyczna.pl</Link><br />All rights reserved!</p>
     </div>
   );
 }
