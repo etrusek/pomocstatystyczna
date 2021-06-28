@@ -9,7 +9,7 @@ const IndexPage = () => {
   return (
     <div classNameName="bg about">
       <section>
-        <h1>Korepetycje w tym roku (od września):</h1>
+        <h1>Korepetycje w tym roku (od września) :</h1>
         <div className="tbl-header">
           <table cellpadding="0" cellspacing="0" border="0">
             <thead>
