@@ -9,7 +9,7 @@ const IndexPage = () => {
   return (
     <div classNameName="bg about">
       <section>
-        <h1>Korepetycje w tym roku:</h1>
+        <h1>Korepetycje w tym roku (od września):</h1>
         <div className="tbl-header">
           <table cellpadding="0" cellspacing="0" border="0">
             <thead>
@@ -70,8 +70,7 @@ const IndexPage = () => {
                 <td>16:30 - 17:30</td>
                 <td></td>
                 <td>16:30 - 17:30</td>
-
-                <td></td>
+                <td>Zajęte</td>
               </tr><tr>
                 <td></td>
                 <td></td>
