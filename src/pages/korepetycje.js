@@ -82,9 +82,9 @@ const IndexPage = () => {
                 <td></td>
                 <td></td>
                 <td>19:00 - 20:00</td>
-                <td></td>
+                <td>Zajęte</td>
                 <td>19:00 - 20:00</td>
-                <td></td>
+                <td>Zajęte</td>
               </tr>
             </tbody>
           </table>
