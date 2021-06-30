@@ -14,7 +14,7 @@ const IndexPage = () => {
           <table cellpadding="0" cellspacing="0" border="0">
             <thead>
               <tr>
-                <th colspan="2">NIEDZIELA 60zł za godzinę</th>
+                <th colspan="2">NIEDZIELA 50zł za godzinę</th>
                 <th colspan="2">PONIEDZIAŁEK 50zł za godzinę</th>
                 <th colspan="2">WTOREK 50zł za godzinę</th>
               </tr>
