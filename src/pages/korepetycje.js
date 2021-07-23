@@ -34,7 +34,7 @@ const IndexPage = () => {
               </tr>
               <tr>
                 <td>11:00 - 12:00</td>
-                <td></td>
+                <td>Zajęte</td>
                 <td></td>
                 <td></td>
                 <td></td>
