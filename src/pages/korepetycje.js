@@ -10,8 +10,9 @@ const IndexPage = () => {
     <div classNameName="bg about">
       <section>
         <h1>Korepetycje w tym roku (od września) :</h1>
+        <h1>Brak wolnych terminów</h1>
         <div className="tbl-header">
-          <table cellpadding="0" cellspacing="0" border="0">
+          {/* <table cellpadding="0" cellspacing="0" border="0">
             <thead>
               <tr>
                 <th colspan="2">NIEDZIELA 50zł za godzinę</th>
@@ -86,7 +87,7 @@ const IndexPage = () => {
                 <td>Zajęte</td>
               </tr>
             </tbody>
-          </table>
+          </table> */}
         </div>
       </section>
 
